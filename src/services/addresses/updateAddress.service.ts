@@ -1,8 +1,8 @@
-import { Address } from "@prisma/client";
 import { prisma } from "../../app";
 import { AppError } from "../../errors";
+import { ICreateBaseAddress } from "../../interfaces/addresses.interfaces";
 export const updateAddressService = async (
-  data: Address,
+  data: ICreateBaseAddress,
   addressId: string
 ) => {
   const address = await prisma.address.findUnique({
