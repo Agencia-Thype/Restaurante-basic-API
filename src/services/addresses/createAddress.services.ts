@@ -16,6 +16,7 @@ export const createAddressService = async (data: Address) => {
   }
 
   const newAddress = await prisma.address.create({
+    
     data,
   });
 
