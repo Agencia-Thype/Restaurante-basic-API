@@ -1,8 +1,8 @@
-import { OrderItem } from "@prisma/client";
 import { prisma } from "../../app";
 import { AppError } from "../../errors";
+import { ICreateBaseOrder } from "../../interfaces/orders.interfaces";
 
-export const updateOrderItemService = async (id: string, data: OrderItem) => {
+export const updateOrderItemService = async (id: string, data: ICreateBaseOrder) => {
   const orderItem = await prisma.orderItem.findUnique({
     where: {
       id,

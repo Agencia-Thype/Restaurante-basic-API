@@ -1,9 +1,10 @@
 import { prisma } from "../../app";
 import { AppError } from "../../errors";
-import { MenuItem } from "@prisma/client";
+import { createBaseMenuItem } from "../../interfaces/menuItem.interfaces";
+
 
 export const updateMenuItemService = async (
-  data: MenuItem,
+  data: createBaseMenuItem,
   menuItemId: string
 ) => {
   const menuItem = await prisma.menuItem.findUnique({
