@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 services:
   express-typescript-docker:
@@ -14,15 +14,14 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL="postgresql://igorg:I8gor291*@db-downtown.cjc9mjyajtux.sa-east-1.rds.amazonaws.com:5432/hamburgueria_db"
-      - SECRET_KEY="SECRET_KEY"
+      - DATABASE_URL="postgres://restaurante_basic_db_nlby_user:RjmQj5bJZrTF8zLAMC0DwXoOR0PyMqVX@dpg-cpj2ufmct0pc7383dbr0-a/restaurante_basic_db_nlby"
   postgres:
     image: postgres:14.7
     restart: always
     environment:
-      - "POSTGRES_USER=igorg"
-      - "POSTGRES_PASSWORD=I8gor291*"
-      - "POSTGRES_DB=hamburgueria_db"
+      - "POSTGRES_USER=restaurante_basic_db_nlby_user"
+      - "POSTGRES_PASSWORD=RjmQj5bJZrTF8zLAMC0DwXoOR0PyMqVX"
+      - "POSTGRES_DB=restaurante_basic_db_nlby"
     ports:
       - "5433:5432"
     volumes:

@@ -1,4 +1,4 @@
-import { Address } from "@prisma/client";
+import { Address } from ".prisma/client";
 import { prisma } from "../../app";
 import { AppError } from "../../errors";
 
@@ -22,3 +22,4 @@ export const createAddressService = async (data: Address) => {
 
   return newAddress;
 };
+ 
