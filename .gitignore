@@ -1,0 +1,32 @@
+# Node.js
+node_modules/
+dist/
+
+
+# Prisma
+/prisma/.env
+
+# Logs
+logs
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# Dependencies
+yarn.lock
+package-lock.json
+
+# Build files
+
+*.js.map
+*.js
+
+# Tests
+__tests__/
+coverage/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db

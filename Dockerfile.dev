@@ -1,0 +1,19 @@
+FROM node:lts-alpine
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+COPY prisma ./prisma/
+
+# COPY ENV variable
+COPY .env ./
+
+# COPY tsconfig.json file
+COPY tsconfig.json ./
+
+RUN yarn
+
+RUN yarn prisma generate
+
+COPY . .

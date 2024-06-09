@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  express-typescript-docker:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    container_name: express-typescript-docker
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL="postgresql://igorg:I8gor291*@db-downtown.cjc9mjyajtux.sa-east-1.rds.amazonaws.com:5432/hamburgueria_db"
+      - SECRET_KEY="SECRET_KEY"
+  postgres:
+    image: postgres:14.7
+    restart: always
+    environment:
+      - "POSTGRES_USER=igorg"
+      - "POSTGRES_PASSWORD=I8gor291*"
+      - "POSTGRES_DB=hamburgueria_db"
+    ports:
+      - "5433:5432"
+    volumes:
+      - progresDB:/data/postgres
+
+volumes:
+  progresDB:
